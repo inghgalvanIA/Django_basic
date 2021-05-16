@@ -11,6 +11,7 @@
 </head>
 <body>
  
+
        <div class="container">
            <h2 class="text-center mt-5">Lista de Estudiantes</h2>
            <br>
@@ -27,23 +28,20 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              
+              {% for student in get_students %}
+                <tr>
+                  
+                  <td>{{ student.roll_no }}</td>
+                  <td><img src="{{ student.photo.url }}" alt="" width="40" height="40" style="border-radius: 50px;"></td>
+                  <td>{{ student.full_name }}</td>
+                  <td>{{ student.course }}</td>
+                  <td>{{ student.grade}}</td>
+                  <td>{{ student.gender }}</td>
+                </tr>
+
+              {% endfor %}
+
             </tbody>
           </table>
 
