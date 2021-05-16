@@ -15,3 +15,6 @@ class Student(models.Model):
     course = models.CharField(max_length=100)
     grade = models.CharField(max_length=100)
     gender = models.CharField(choices=gender_choice, max_length=100)
+
+    def __str__(self):
+        return self.full_name
